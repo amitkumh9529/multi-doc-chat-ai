@@ -8,12 +8,18 @@ import type {
   ChatResponse,
   DocumentInfo,
   ChatMessage,
+  
+  
 } from "../types";
 
-const BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8000/api";
+const API_URL = import.meta.env.VITE_API_URL;
+
+if (!API_URL) {
+  throw new Error("VITE_API_URL is not defined");
+}
 
 const api = axios.create({
-  baseURL: BASE_URL,
+  baseURL: API_URL,
   timeout: 60_000, // 60 s — LLM calls can take a moment
 });
 
