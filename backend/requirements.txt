@@ -11,6 +11,9 @@ PyPDF2==3.0.1
 langchain-text-splitters==0.2.1
 
 # Embeddings & vector store
+# ... other packages ...
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.2.2+cpu
 sentence-transformers==3.0.0
 faiss-cpu==1.8.0
 numpy==1.26.4
