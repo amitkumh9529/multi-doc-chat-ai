@@ -21,7 +21,7 @@ app = FastAPI(
 # Allow React dev server (and production build) to communicate with the API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.ALLOWED_ORIGINS,
+    allow_origins=["*"],  # restrict later
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
